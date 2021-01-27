@@ -9,6 +9,8 @@ import CoinsSearch from './Components/CoinsSearch';
 
 import Context from './Context';
 
+const URL_COINGECKO = "https://api.coingecko.com/api/v3/coins/";
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,7 @@ export default class App extends Component {
     let user = localStorage.getItem("user");
     let cart = localStorage.getItem("cart");
 
-    await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&order=market_cap_desc&page=1&sparkline=false')
+    await axios.get(URL_COINGECKO +'markets?vs_currency=brl&order=market_cap_desc&page=1&sparkline=false')
                   .then(coins => {
                                 this.setState({coins: coins.data});
                                 

@@ -2,7 +2,6 @@ import React from "react";
 
 const CoinsItem = props => {
   const { coin } = props;
-  console.log(coin);
   return (
     <div className=" column is-half">
       <div className="box">
@@ -15,7 +14,7 @@ const CoinsItem = props => {
           <div className="media-content">
             <b style={{ textTransform: "capitalize" }}>
               {coin.name}{" "}
-              <span className="tag is-primary">${coin.current_price}</span>
+              <span className="tag is-primary">R$ {coin.current_price.toFixed(2)}</span>
             </b>
             <div>{coin.shortDesc}</div>
            
@@ -25,8 +24,7 @@ const CoinsItem = props => {
                 onClick={() =>
                   props.addToCart({
                     id: coin.name,
-                    coin,
-                    amount: 1
+                    coin
                   })
                 }
               >

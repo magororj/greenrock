@@ -16,7 +16,7 @@ const CartItem = props => {
                     <div className="media-content">
                         <b style={{ textTransform: "capitalize"}}>
                             {coin.name}{" "}
-                            <span className="tag is-primary">$ {coin.current_price}</span>
+                            <span className="tag is-primary">R$ {coin.current_price.toFixed(2)}</span>
                         </b>
                         <div>{coin.shortDesc}</div>
                         
